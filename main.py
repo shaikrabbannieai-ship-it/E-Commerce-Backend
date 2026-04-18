@@ -20,6 +20,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://sarax-ecommerce.netlify.app",  # Your Netlify URL
+        "https://sarax-e-commerce.vercel.app",
         "https://e-commerce-backend-2-4b0u.onrender.com"
     ],
     allow_credentials=True,
