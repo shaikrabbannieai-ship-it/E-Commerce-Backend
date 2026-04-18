@@ -18,13 +18,17 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://sarax-ecommerce.netlify.app",  # Your Netlify URL
+        "https://e-commerce-backend-2-4b0u.onrender.com"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-DATABASE_URL = "postgresql://postgres:Sara1986@localhost:5432/ecommerce"
+# Replace the DATABASE_URL line (around line 30-35)
+DATABASE_URL = "postgresql://neondb_owner:npg_mun7TDZ0XFae@ep-dark-paper-a4qa0gc7.us-east-1.aws.neon.tech/neondb?sslmode=require"
 engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
